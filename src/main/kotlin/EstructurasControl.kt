@@ -7,4 +7,5 @@ class EstructurasControl {
             else -> println("Código desconocido, algo ha fallado")
         }
     }
+
 }

@@ -154,5 +154,22 @@ fun main(args: Array<String>) {
     //vemos valores
     println(edadHeroesMutable.values)
 
+    //llamando la función
 
+    val fraseAleatoria = "En platzi nunca paramos de aprender"
+    val fraseOrdenadaAleatoriamente = randomCase(fraseAleatoria)
+    println(fraseOrdenadaAleatoriamente)
+
+
+}
+// Creando funciones
+
+fun randomCase(frase : String) : String {
+    val numeroAleatorio = 0..99
+    val resultadoAleatorio = numeroAleatorio.random()
+    return if (resultadoAleatorio.rem(2) == 0){
+        frase.toUpperCase()
+    } else {
+        frase.toLowerCase()
+    }
 }
