@@ -83,6 +83,76 @@ fun main(args: Array<String>) {
     val c = m?.length ?: -1
     println(c)
 
+    // Usando Listas
+
+    val numerosDeLoteria = listOf(11, 22, 33, 55, 44, 88, 66, 77)
+
+    val numerosSorted = numerosDeLoteria.sorted()
+    println(numerosSorted)
+
+    val numerosAleatorios = numerosDeLoteria.shuffled()
+    println(numerosAleatorios)
+
+    val numerosPares = numerosDeLoteria.filter { it % 2 == 0 }
+    println(numerosPares) // Solo imprimirá los números pares de la lista original
+
+    val numerosDuplicados = numerosDeLoteria.map { it * 2 }
+    println(numerosDuplicados) // Cada número será duplicado en la nueva lista
+
+    val sumaTotal = numerosDeLoteria.reduce { acc, numero -> acc + numero }
+    println(sumaTotal) // Imprime la suma de todos los números en la lista
+
+    val porDecenas = numerosDeLoteria.groupBy { it / 10 }
+    println(porDecenas) // Agrupa los números por decenas (11 y 22 en un grupo, 33 y 44 en otro, etc.)
+
+    val (pares, impares) = numerosDeLoteria.partition { it % 2 == 0 }
+    println(pares)
+    println(impares)
+
+    val masNumeros = numerosDeLoteria + listOf(99, 100)
+    println(masNumeros)
+
+    val numerosReversed = numerosDeLoteria.reversed()
+    println(numerosReversed) // Imprime la lista en orden inverso
+
+    // Usando Mapas
+
+    //mapa inmutable
+    var edadHeroes = mapOf(
+        "Ironman" to 35,
+        "Spiderman" to  23,
+        "Capitan America" to 99
+    )
+    println(edadHeroes)
+
+    //mapa mutable
+    val edadHeroesMutable = mutableMapOf(
+        "Ironman" to 35,
+        "Spiderman" to  23,
+        "Capitan America" to 99
+    )
+    println(edadHeroesMutable)
+
+    //agregamos elemento
+    edadHeroesMutable.put("Wolverine", 45)
+    println(edadHeroesMutable)
+
+    edadHeroesMutable["Storm"] = 30
+    println(edadHeroesMutable)
+
+    //podemos hacer get a la lista mutable o imutable
+    val edadIronman = edadHeroes["Ironman"]
+    println(edadIronman)
+
+    //eliminar
+    edadHeroesMutable.remove("Wolverine")
+    println(edadHeroesMutable)
+
+    //vemos llaves
+    println(edadHeroesMutable.keys)
+
+    //vemos valores
+    println(edadHeroesMutable.values)
 
 
 }
